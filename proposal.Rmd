@@ -1,0 +1,91 @@
+---
+title: "Project proposal"
+author: "TBD: Matthew O'Donnell, Gian Castillero, Kevin Kavilaveettil, Eric Zhang"
+date: "10/13/2021"
+output: pdf_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(warning = FALSE, 
+                  message = FALSE)
+```
+
+```{r load-packages}
+library(tidyverse) 
+``` 
+
+```{r load-data}
+nba_drafts <- read.csv("data/2000.csv")
+nfl_stats <- read.csv("data/fantasy-stats-receiving.csv")
+fifa_stats <- read.csv("data/fifa_cleaned.csv")
+```
+
+```{r add_ppg_variable, include = FALSE}
+nfl_stats <- nfl_stats %>% 
+  mutate(fantasy_ppg = fantasyPts / games) %>% 
+  filter(fantasy_ppg >= 5)
+```
+
+# Data Set 1
+
+## Introduction and Data
+
+NBA Drafted Players between 2000-2016
+
+We will be looking at players that have been drafted into the NBA from 2000-2016. The data was collected by Basketball Reference year by year as new players were drafted and as they have played. All these statistics are tracked by the NBA. Basketball Reference organizes their draft data by year so, to obtain a single data frame that included all drafts between 2000-2016, we downloaded the data for each year and combined it into a single data frame, which we uploaded to R. The observations of this data frame include what colleges the players were drafted from, the year they were drafted, and the pick they were drafted in, as well as their NBA career and per game stats.  
+
+## Research questions 
+
+What colleges have produced the most NBA talent since 2000?
+
+Our initial hypothesis is that the blue blood schools (Duke, UNC, Kentucky, Kansas) have produced players that have gone on to have the most NBA success. 
+
+# Data Set 2
+
+## Introduction and Data
+
+NFL Skill Position Players
+
+We will be looking at data from Pro Football Focus that includes NFL running backs, wide receivers, and tight ends that averaged at least 5 fantasy points per game back to the 2016 NFL season. The data has been collected over multiple NFL seasons by tracking players' statistical production and the fantasy output that it equates to. Like Basketball Reference, PFF also organized their data by season, and we went through the same process of combining data from each year and uploading it to R. As part of the process, we filtered out players who averaged less than 5 fantasy points per game in a single season since they are not significant enough for this analysis. The observations in this data frame include raw football stats such as yards, touchdowns, and receptions and information on the number of fantasy points they scored as well in a single season. Most importantly, this data frame conveys efficiency-based stats such as yards per carry, target percentage, etc. It is important to mention that for this data set, there will be several observations for the same player depending on how many seasons they have been playing in the NFL. We will consider each year as an individual performance so we will not measure improvement or underperformance over the years. 
+
+## Research questions 
+
+Which efficiency stats are the most indicative of fantasy football success?
+
+We hypothesize that volume (in terms of touches/receptions) is the best indicator of fantasy success. When looking deeper into the data we think that efficiency stats such as catch percentage, yards per carry, yards per target, etc as well as calculating these stats above/below expected will be the best indicators of fantasy success. 
+
+# Data Set 3
+
+## Introduction and Data
+
+FIFA 18
+
+We will be looking at data on all professional soccer players included in the video game Fifa 18. This data set was found on the FiveThirtyEight website and all of its data was conveyed by EA sports in the year 2018. In addition to a player's measurable and biographical information, this data set conveys the player's overall rating, position, weak foot, skill moves, potential, market value, wages, preferred foot, club information, national team statistics, breakdown ratings of other skills, and out of position ratings. The data set also provides specific tags associated with each player along with some of their specific traits and attributes.
+
+## Research questions 
+
+Which skills best correspond to a higher rating for a player in general and by position? Which main position and skill contributes to being higher rated out of position player? Which players can make a case for being the best player in the game?
+
+We hypothesize that skills relating to a player's physical attribute as opposed to their technical attributes such as pace and physicality will correspond better than other skills for achieving a higher rating for main position and out of position ratings. Additionally,we hypothesize that the best players in the game are not necessarily those with the highest overall rating but those who have a more balanced yet strong set of skills. 
+
+# Glimpse
+
+## Data set 1
+
+```{r glimpse-1}
+glimpse(nba_drafts)
+```
+
+## Data set 2
+
+```{r glimpse-2}
+glimpse(nfl_stats)
+```
+
+
+## Data set 3
+
+```{r glimpse-3}
+glimpse(fifa_stats)
+```
+
