@@ -56,7 +56,7 @@ $$H_0: \mu_{BB} = \mu_{N} \quad \text{vs.} \quad H_a: \mu_{BB} > \mu_{N}$$
 ## Results
  
 ### Draft Representation
-The five Blue Blood schools collectively account for **12.76%** of all draftees from 2000–2016 while occupying all five top spots in total players drafted among universities — a significant over-representation relative to the hundreds of other programs.
+The five Blue Blood schools collectively account for **12.76%** of all draftees from 2000–2016 while occupying all five top spots in total players drafted among universities, a significant over-representation relative to the hundreds of other programs.
  
 ### Per Game Statistics
  
@@ -85,7 +85,7 @@ Adding Blue Blood status improves both R² and adjusted R², confirming it contr
  
 ### Hypothesis Test
  
-The observed difference in mean win shares between Blue Blood and non-Blue Blood players yielded a **p-value of 0.0045**. At a significance level of α = 0.05, the null hypothesis is rejected — there is sufficient evidence that Blue Blood players have a statistically significantly higher mean career win shares total.
+The observed difference in mean win shares between Blue Blood and non-Blue Blood players yielded a **p-value of 0.0045**. At a significance level of α = 0.05, the null hypothesis is rejected. There is sufficient evidence that Blue Blood players have a statistically significantly higher mean career win shares total.
  
 ## Key Findings
  
